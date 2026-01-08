@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Noir Cocktails | Cócteles</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="theme-dark">
+  <header class="site-header">
+    <div class="logo">Noir<span>Cocktails</span></div>
+    <button class="hamburger" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="cocktails.html" class="active">Cócteles</a></li>
+        <li><a href="studio.html">Studio</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page-cocktails">
+    <section class="section">
+      <header class="section-header">
+        <h1>Cócteles desde la API</h1>
+        <p>Busca por nombre o filtra por tipo de bebida. Los datos se cargan en tiempo real desde TheCocktailDB.</p>
+      </header>
+
+      <div class="filters glass">
+        <div class="field">
+          <label for="searchInput">Buscar cóctel</label>
+          <input type="text" id="searchInput" placeholder="Ej. Margarita, Negroni..." />
+        </div>
+        <div class="field">
+          <label for="typeSelect">Tipo</label>
+          <select id="typeSelect">
+            <option value="">Todos</option>
+            <option value="Alcoholic">Alcoholic</option>
+            <option value="Non alcoholic">Non alcoholic</option>
+          </select>
+        </div>
+        <button id="searchBtn" class="btn primary">Buscar</button>
+      </div>
+
+      <div class="cocktails-layout">
+        <div class="cocktail-list glass" id="cocktailList" aria-live="polite">
+          <p class="placeholder">Empieza una búsqueda para ver resultados.</p>
+        </div>
+
+        <aside class="cocktail-detail glass" id="cocktailDetail">
+          <p class="placeholder">Selecciona un cóctel para ver la receta.</p>
+        </aside>
+      </div>
+    </section>
+    <section class="section gallery">
+  <header class="section-header">
+    <h2>Los cócteles no son solo bebidas.</h2>
+    <p>  
+Son una forma de expresión, un gesto de estilo, una declaración silenciosa de quien sabe disfrutar.
+Cada mezcla bien pensada es una firma personal, cada copa servida con intención es una obra efímera.
+En el mundo de la alta coctelería, el lujo no se grita: se saborea.</p>
+  </header>
+
+  <div class="gallery-grid">
+    <img src="img/1.png" alt="Cóctel 1" />
+    <img src="img/9.png" alt="Cóctel 9" />
+    <img src="img/3.png" alt="Cóctel 3" />
+    <img src="img/4.png" alt="Cóctel 4" />
+    <img src="img/5.png" alt="Cóctel 5" />
+    <img src="img/6.png" alt="Cóctel 6" />
+    <img src="img/7.png" alt="Cóctel 7" />
+    <img src="img/8.png" alt="Cóctel 8" />
+  </div>
+</section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Proyecto académico · Datos de <a href="https://www.thecocktaildb.com/" target="_blank">TheCocktailDB</a></p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Noir Cocktails | Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="theme-dark">
+  <header class="site-header">
+    <div class="logo">Noir<span>Cocktails</span></div>
+    <button class="hamburger" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html" class="active">Inicio</a></li>
+        <li><a href="cocktails.html">Cócteles</a></li>
+        <li><a href="studio.html">Studio</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">API powered bar experience</p>
+        <h1>Mixología en clave <span>noir</span></h1>
+        <p class="hero-text">
+          Explora recetas reales de TheCocktailDB, estadísticas de categorías y una experiencia visual oscura y minimal.
+        </p>
+        <a href="cocktails.html" class="btn primary">Explorar cócteles</a>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card glass">
+          <p class="tag">Destacado API</p>
+          <h2 id="featured-name">Cargando...</h2>
+          <p id="featured-category" class="meta"></p>
+          <button id="featured-refresh" class="btn ghost">Otro cóctel</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section split">
+      <div>
+        <h2>Datos en tiempo real</h2>
+        <p>
+          Usamos la API pública de <strong>TheCocktailDB</strong> para obtener recetas, categorías y tipos de bebidas.
+          El gráfico muestra cuántos cócteles se han encontrado por categoría en la sesión actual.
+        </p>
+        <ul class="bullets">
+          <li><span></span>Listado dinámico de cócteles</li>
+          <li><span></span>Detalle de receta desde la API</li>
+          <li><span></span>Gráfica de categorías con Chart.js</li>
+        </ul>
+      </div>
+      <div class="chart-wrapper glass">
+        <h3>Categorías de cócteles consultadas</h3>
+        <canvas id="categoryChart" aria-label="Gráfico de categorías"></canvas>
+      </div>
+    </section>
+
+    
+    <section class="section grid-3">
+      <article class="card glass fade-in">
+        <h3>Historia breve del cóctel</h3>
+        <p>El cóctel nació como una mezcla medicinal.  
+En el siglo XVIII, los médicos combinaban licores con hierbas y especias para tratar dolencias. Con el tiempo, esta práctica se transformó en arte: los bartenders comenzaron a experimentar, y surgieron clásicos como el Old Fashioned o el Martini.
+Hoy, la coctelería es sinónimo de sofisticación, creatividad y cultura líquida.</p>
+      </article>
+      <article class="card glass fade-in">
+        <h3>Curiosidades que sorprenden</h3>
+        <p>¿Sabías que “brindar” en inglés se dice “toast” por una tostada literal?  
+Los romanos colocaban pan en el vino para absorber impurezas, y esa tradición dio origen al término.
+También se dice que cantar a los licores mientras envejecen mejora su carácter.
+Y el Bloody Mary, ese cóctel de vodka y tomate, fue creado como remedio para la resaca</p>
+      </article>
+      <article class="card glass fade-in">
+        <h3>Técnicas que marcan la diferencia</h3>
+        <p>Un cóctel no se agita, se interpreta.  
+Las técnicas de coctelería —agitado, removido, escanciado, machacado— no son meros gestos: definen textura, temperatura y equilibrio.
+Un Mojito mal machacado pierde frescura. Un Negroni sobre-diluido pierde carácter.
+La precisión es lo que convierte una bebida en una experiencia.
+
+</p>
+      </article>
+    </section>
+<div class="img-center">
+  <img src="img/banner-cocteles.png" alt="Imagen elegante" />
+</div>
+
+<section class="section cocktail-info fade-in-delayed">
+  <h2>El arte detrás de cada copa</h2>
+  <p>
+    La coctelería es mucho más que mezclar ingredientes: es una disciplina que combina química, intuición y sensibilidad estética. 
+    Cada cóctel cuenta una historia distinta: algunos nacen en hoteles legendarios, otros en bares clandestinos, y otros surgen de la creatividad de bartenders que buscan romper las reglas.
+  </p>
+  <p>
+    La temperatura, la dilución, el tipo de hielo, el aroma de los cítricos o la textura de una espuma pueden transformar por completo la experiencia. 
+    Un buen cóctel no solo se bebe: se observa, se huele, se siente. Es un ritual que invita a detener el tiempo y disfrutar del momento.
+  </p>
+</section>
+
+
+    
+  </main>
+
+  <footer class="site-footer">
+    <p>Proyecto académico · Datos de <a href="https://www.thecocktaildb.com/" target="_blank">TheCocktailDB</a></p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
+
