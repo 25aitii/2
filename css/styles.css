@@ -652,3 +652,49 @@ img {
     transform: translateY(0); /* Mantengo tu estilo */
   }
 }
+@media (max-width: 600px) {
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+}
+/* --- NOIR MOTION DIVIDER --- */
+.noir-divider {
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, #1a1a1a, #000000, #1a1a1a);
+  margin: 3rem auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 999px;
+}
+
+.noir-divider .shine {
+  position: absolute;
+  top: 0;
+  left: -20%;
+  width: 20%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+  animation: shineMove 2.8s ease-in-out infinite;
+}
+
+@keyframes shineMove {
+  0% {
+    left: -20%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 120%;
+  }
+}
+/* Más separación arriba en la página Studio */
+.page-studio {
+  padding-top: 3.5rem;
+}
