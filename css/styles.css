@@ -628,3 +628,27 @@ img {
     transform: translateY(0);
   }
 }
+
+/* FIX para que la parte superior no se corte en móvil */
+@media (max-width: 600px) {
+  .site-header {
+    padding: 0.8rem 1rem;
+  }
+
+  .hero {
+    padding-top: 7rem; /* deja espacio para el header */
+  }
+}
+
+/* ARREGLO DEFINITIVO DEL MENÚ EN MÓVIL */
+@media (max-width: 720px) {
+  .main-nav {
+    display: none; /* Oculto completamente */
+    transform: translateY(0); /* Reseteo la animación */
+  }
+
+  .main-nav.open {
+    display: block; /* Se muestra cuando se abre */
+    transform: translateY(0); /* Mantengo tu estilo */
+  }
+}
