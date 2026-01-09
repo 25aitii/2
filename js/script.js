@@ -267,3 +267,70 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+// === Gráfica de Cócteles (encapsulada) ===
+(function () {
+
+    const ctx = document.getElementById("cocktailChart");
+
+    async function getCocktailData() {
+        const url = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail";
+
+        try {
+            const response = await fetch(url);
+            const data = await response.json();
+
+            // Tomamos solo los primeros 10 para una gráfica limpia
+            const cocktails = data.drinks.slice(0, 10);
+
+            return {
+                labels: cocktails.map(c => c.strDrink),
+                values: cocktails.map(() => Math.floor(Math.random() * 100) + 20) // valores ficticios de popularidad
+            };
+
+        } catch (error) {
+            console.error("Error obteniendo datos de cócteles:", error);
+        }
+    }
+
+    async function renderChart() {
+        const cocktailData = await getCocktailData();
+
+        if (!cocktailData) return;
+
+        new Chart(ctx, {
+            type: "bar",
+            data: {
+                labels: cocktailData.labels,
+                datasets: [{
+                    label: "Popularidad",
+                    data: cocktailData.values,
+                    backgroundColor: "rgba(255, 99, 132, 0.4)",
+                    borderColor: "rgba(255, 99, 132, 1)",
+                    borderWidth: 2,
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: { color: "#444" }
+                    },
+                    x: {
+                        ticks: { color: "#444" }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+    }
+
+    renderChart();
+
+})();

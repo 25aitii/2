@@ -618,6 +618,43 @@ img {
     height: 120px;
   }
 }
+/* === Gráfica de Cócteles (encapsulada) === */
+
+.cocktail-chart-section {
+    width: 100%;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    background: rg(25, 25, 25, 0.85)0;
+}
+
+.cocktail-chart-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.cocktail-chart-wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgb(0, 0, 0);
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+}
+
+.cocktail-chart-wrapper canvas {
+    width: 100% !important;
+    height: auto !important;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .cocktail-chart-title {
+        font-size: 1.6rem;
+    }
+}
 
 
 .cocktail-info {
