@@ -586,18 +586,39 @@ img {
 
 
 
-
-.img-center {
-  display: flex;
-  justify-content: center;
-  margin: 2rem 0;
-}
-
-.img-center img {
+.carousel-multi {
   width: 100%;
-  max-width: 600px; /* controla el tamaño */
-  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin: auto;
+  padding: 10px 0;
 }
+
+.carousel-track-multi {
+  display: flex;
+  gap: 10px;
+  animation: scrollMulti 40s linear infinite;
+}
+
+.carousel-track-multi img {
+  height: 200px;
+  width: auto;
+  flex-shrink: 0;
+  border-radius: 6px;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+@keyframes scrollMulti {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@media (max-width: 600px) {
+  .carousel-track-multi img {
+    height: 120px;
+  }
+}
+
 
 .cocktail-info {
   max-width: 760px;
@@ -697,4 +718,71 @@ img {
 /* Más separación arriba en la página Studio */
 .page-studio {
   padding-top: 3.5rem;
+}
+
+/* ============================= */
+/* GALLERY HOVER TEXT — SIN CAMBIAR LAYOUT */
+/* ============================= */
+
+.gallery-grid img {
+  position: relative;
+}
+
+/* Texto */
+.gallery-grid img::after {
+  content: attr(data-caption);
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  padding: 0.7rem 1rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #ffffff;
+
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0)
+  );
+
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+
+  pointer-events: none;
+}
+
+/* Hover */
+.gallery-grid img:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Video de fondo: ocupa toda la pantalla, detrás de todo */
+.video-background {
+  position: fixed; /* fijo para que no se mueva al hacer scroll */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1; /* asegura que esté detrás del contenido */
+}
+
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* cubre toda el área sin deformarse */
+}
+
+/* Contenido de la página */
+.contenido {
+  position: relative; /* para estar sobre el video */
+  z-index: 1;
+  color: white; /* para que contraste con el video */
+  padding: 20px;
+  text-align: center;
 }
